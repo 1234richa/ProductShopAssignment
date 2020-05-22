@@ -1,0 +1,33 @@
+{
+	
+	"products": [
+	{
+		"productName": "Rack",
+		"productDescription": "jackson",
+		"regularPrice": "400",
+		"salePrice": "500",
+		"productPhoto": "pic",
+		"colors": "red",
+		"stores": "store1"
+	},
+	{
+		"productName": "literature",
+		"productDescription": "jackson",
+		"regularPrice": "400",
+		"salePrice": "500",
+		"productPhoto": "pic",
+		"colors": "red",
+		"stores": "store1"
+	},
+	{
+		"productName": "comedy",
+		"productDescription": "jackson",
+		"regularPrice": "400",
+		"salePrice": "500",
+		"productPhoto": "pic",
+		"colors": "red",
+		"stores": "store1"
+	}
+	]
+    
+}

@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout   xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="clickHandler"
+            type="com.example.productshopmvvmproject.AddAndEditActivity.AddAndEditActivityClickHandlers"/>
+        <variable
+            name="product"
+            type="com.example.productshopmvvmproject.model.Product"/>
+
+<!--        <variable-->
+<!--            name="imageUrl"-->
+<!--            type="String" />-->
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".AddNewStudentActivity">
+
+        <RelativeLayout
+            android:id="@+id/rl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="#FAFAFA"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="50dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/et_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@={product.productName}"
+                            android:hint="ProductName"
+                            android:textStyle="normal"
+                            android:textSize="20dp"/>
+
+
+                        <EditText
+                            android:id="@+id/et_description"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@={product.productDescription}"
+                            android:hint="ProductDescription"
+                            android:textStyle="normal"
+                            android:textSize="20dp"/>
+
+
+                        <EditText
+                            android:id="@+id/et_regularPrice"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@={product.regularPrice}"
+                            android:hint="RegularPrice"
+                            android:textStyle="normal"
+                            android:textSize="20dp"/>
+
+                    <EditText
+                        android:id="@+id/et_salesPrice"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@={product.salePrice}"
+                        android:hint="SalesPrice"
+                        android:textStyle="normal"
+                        android:textSize="20dp"/>
+
+                    <TextView
+                        android:id="@+id/et_productImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Select Image"
+                        android:onClick="@{clickHandler::onImageButtonClicked}"
+                        android:textStyle="normal"
+                        android:textSize="20dp"/>
+
+                    <ImageView
+                        android:id="@+id/imageview"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="20dp"
+                        android:src="@drawable/ic_launcher_background"/>
+
+<!--                        app:profileImage="@{imageUrl}" />-->
+                    <EditText
+                        android:id="@+id/et_colors"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@={product.colors}"
+                        android:hint="Colors"
+                        android:textStyle="normal"
+                        android:textSize="20dp"/>
+
+                    <EditText
+                        android:id="@+id/et_stores"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@={product.stores}"
+                        android:hint="Stores"
+                        android:textStyle="normal"
+                        android:textSize="20dp"/>
+
+        <Button
+            android:id="@+id/btnSubmit"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_margin="8dp"
+            android:text="@string/submit_button"
+            android:textColor="@color/colorPrimary"
+            android:textSize="25sp"
+            android:onClick="@{clickHandler::onSubmitButtonClicked}"
+            />
+
+                    <Button
+                        android:id="@+id/btndelete"
+                        style="@style/Widget.AppCompat.Button.Colored"
+                        android:layout_width="match_parent"
+                        android:layout_height="58dp"
+                        android:layout_margin="8dp"
+                        android:text="@string/delete_button"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="25sp"
+                        android:visibility="@{product.productName == null ? View.GONE : View.VISIBLE}"
+                        android:onClick="@{clickHandler::onDeleteButtonClicked}"
+                        />
+
+<!--        <TextView-->
+<!--            android:id="@+id/textView"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="5dp"-->
+<!--            android:textSize="30dp"-->
+<!--            android:text="@string/product_Name"-->
+<!--            android:textAppearance="@style/TextAppearance.AppCompat.Display1"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.06"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintVertical_bias="0.017" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/textView2"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="5dp"-->
+<!--            android:textSize="30dp"-->
+<!--            android:text="@string/product_description"-->
+<!--            android:textAppearance="@style/TextAppearance.AppCompat.Display1"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.057"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintVertical_bias="0.20" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/textView3"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="5dp"-->
+<!--            android:textSize="30dp"-->
+<!--            android:text="@string/regular_price"-->
+<!--            android:textAppearance="@style/TextAppearance.AppCompat.Display1"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.057"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintVertical_bias="0.40" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/textView4"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textSize="30dp"-->
+<!--            android:layout_margin="5dp"-->
+<!--            android:text="@string/sales_price"-->
+<!--            android:textAppearance="@style/TextAppearance.AppCompat.Display1"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.057"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintVertical_bias="0.60" />-->
+
+
+
+<!--        <EditText-->
+<!--            android:id="@+id/et_name1"-->
+<!--            android:text="@={product.productName}"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="5dp"-->
+<!--            android:ems="15"-->
+<!--            android:inputType="textPersonName"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.052"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintVertical_bias="0.10" />-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/et_price"-->
+<!--            android:text="@={product.productDescription}"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="5dp"-->
+<!--            android:ems="15"-->
+<!--            android:inputType="textPersonName"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.052"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintVertical_bias="0.30" />-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/et_regularprice"-->
+<!--            android:text="@={product.regularPrice}"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="5dp"-->
+<!--            android:ems="15"-->
+<!--            android:inputType="textPersonName"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.052"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintVertical_bias="0.50" />-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/et_salesprice"-->
+<!--            android:text="@={product.salePrice}"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="5dp"-->
+<!--            android:ems="15"-->
+<!--            android:inputType="textPersonName"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.052"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintVertical_bias="0.70" />-->
+<!--            -->
+                </LinearLayout>
+            </ScrollView>
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
